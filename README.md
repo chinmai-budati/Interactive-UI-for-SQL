@@ -39,3 +39,6 @@ Operational leads often need to interact directly with inventory data to make pu
 * **Operational Efficiency:** Drastically reduces the time required to manage inventory by automating multi-step database updates (e.g., updating stock, logging shipments, and closing reorders) into single-click actions.
 * **Data Integrity:** Utilizes SQL transaction blocks (`START TRANSACTION`, `COMMIT`) within stored procedures to ensure that financial and inventory records remain accurate and synchronized at all times.
 * **Scalable Architecture:** Demonstrates how businesses can define rules within the database layer, ensuring that business logic is consistently applied regardless of the user interface.
+
+### 7. App Demo:
+![Project Demo](https://github.com/chinmai-budati/Interactive-UI-for-SQL/blob/main/demo.gif)
