@@ -14,22 +14,23 @@ The dashboard and database were built using the following tools and technologies
 
 ### 4. Data Source
 The project relies on a custom-built relational database (`advanced_sql`) that simulates a real-world supply chain. The data structure includes:
-* **Products & Inventory:** Tracks product names, categories, pricing, current stock quantities, and reorder levels.
-* **Suppliers:** Manages supplier contact details mapped to specific products.
-* **Stock Entries & Shipments:** Logs historical data for received shipments, daily sales, and stock adjustments.
-* **Reorders:** Tracks the lifecycle of purchase orders from "Pending" to "Received."
+* **Products Data:** Product Id, Product Name, Category, Price, Stock Quantity, Reorder Level, supplier Id.
+* **Suppliers Data:** Supplier Id, Supplier Name, Contact Name, Email, Phone, Address.
+* **Reorders:** Reorder Id, Product Id, Reorder Quantity, Reorder Date, Status.
+* **Shipments Data:** Shipment Id, Product Id, Supplier Id, Quantity Received, Shipment Date.
+* **Stock Entries Data:** Entry Id, Product Id, Change Quantity, Change Type, Entry Date.
 
 ### 5. Features
 
 #### Business Problem
 Operational leads often need to interact directly with inventory data to make purchasing decisions but cannot safely query or update the database directly. Manual database administration for tasks like "Receiving an Order" increases the risk of human error and data corruption.
 
-#### Goal of the Dashboard
+#### Goal of the Project
 * **User Accessibility:** Create a tool that non-tech users can use to see live results and manage inventory without writing SQL.
 * **Full-Stack Integration:** Ensure seamless communication between the frontend and backend, triggering complex SQL stored procedures via simple UI buttons.
 
 #### Walkthrough of Key Modules
-* **Basic Metrics Dashboard:** Instant visibility into Total Sales Value, Restock Value, Active Suppliers, and alerts for products below their reorder level.
+* **Basic Metrics:** Instant visibility into Total Sales Value, Restock Value, Active Suppliers, and alerts for products below their reorder level.
 * **Operational Tasks:**
     * **Add New Product:** A streamlined form that securely inserts new product records and auto-generates associated shipment logs using a backend stored procedure (`AddNewProduct`).
     * **Product History:** A view that tracks the complete lifecycle (Shipments, Sales, and Reorders) for any selected product.
